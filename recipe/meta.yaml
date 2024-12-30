@@ -38,5 +38,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - RajeeGit    # seems to be inactive
+    # - RajeeGit    # seems to be inactive
     - wshanks
