@@ -16,12 +16,13 @@ build:
 requirements:
   host:
     - python {{ python_min }}
+    - iso8601
     - pip
-    - setuptools
+    - setuptools >=61.2
   run:
     - python >={{ python_min }}
     - iso8601
-    - testtools >=0.9.34
+    - testtools >=2.7
 
 test:
   requires:
