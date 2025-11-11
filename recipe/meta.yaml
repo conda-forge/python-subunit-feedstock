@@ -19,6 +19,7 @@ requirements:
     - iso8601
     - pip
     - setuptools >=61.2
+    - testtools
   run:
     - python >={{ python_min }}
     - iso8601
