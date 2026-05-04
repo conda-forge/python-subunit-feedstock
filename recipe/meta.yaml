@@ -1,5 +1,5 @@
 {% set name = "python-subunit" %}
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: a57d61f0ba2c0a8657c61329301ada6ad8e30b26fb47ca3bb37481463e75aabf
+  sha256: 31fe6a7b35550b0d72da98caaa6ba64c547d9346c2846b845cb5c781849e2762
 
 build:
   noarch: python
