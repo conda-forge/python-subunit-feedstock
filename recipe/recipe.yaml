@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: python-subunit
+  version: "1.4.6"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 31fe6a7b35550b0d72da98caaa6ba64c547d9346c2846b845cb5c781849e2762
+
+build:
+  number: 1
+  noarch: python
+  script: python -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - iso8601
+    - pip
+    - setuptools >=61.2
+    - testtools
+  run:
+    - python >=${{ python_min }}
+    - iso8601
+    - testtools >=2.7
+
+tests:
+  - python:
+      imports:
+        - subunit
+      pip_check: false
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  license: Apache-2.0 OR BSD-3-Clause
+  license_file: COPYING
+  summary: Subunit is a streaming protocol for test results
+  homepage: https://launchpad.net/subunit
+
+extra:
+  recipe-maintainers:
+    # - RajeeGit    # seems to be inactive
+    - wshanks
